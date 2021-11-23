@@ -1,0 +1,72 @@
+
+<div>
+    
+    
+    <mat-toolbar >
+        <span >Pharmacy Lion</span>
+        
+        <img src="./assets/img/2.png" class="tama">
+        
+    </mat-toolbar>        
+
+    <div>
+        <a mat-raised-button color="primary" (click)="openAdd()">Nuevo Producto</a>
+        <a mat-raised-button (click)="applyFilter()" >Buscar</a>
+        
+    </div>
+    <mat-form-field appearance="standard">
+        <mat-label>Filter</mat-label>
+        <input matInput  placeholder="Buscar Nombre" [(ngModel)]="Busqueda" >
+    </mat-form-field>
+    <!-- <div class="example-loading-shade"
+       *ngIf="isLoadingResults ">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+  </div> -->
+    <table mat-table [dataSource]="DataProd" class="table"  matSort>
+
+    
+    <ng-container matColumnDef ="IdProducto"  class="header-align-right" >
+        <th mat-header-cell *matHeaderCellDef  mat-sort-header>#</th>
+        <td mat-cell *matCellDef="let element">{{element.idProducto}}</td>
+    </ng-container>
+    <ng-container matColumnDef ="Nombre" >
+        <th mat-header-cell *matHeaderCellDef  mat-sort-header>Nombre Producto</th>
+        <td mat-cell *matCellDef="let element" class="header-align-right">{{element.nombre}}</td>
+    </ng-container>
+    <ng-container matColumnDef ="Cantidad">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Cantidad </th>
+        <td mat-cell *matCellDef="let element" class="header-align-right">{{element.cantidad}}</td>
+    </ng-container>
+    <ng-container matColumnDef ="Descripcion">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Descripcion</th>
+        <td mat-cell *matCellDef="let element" class="header-align-right">{{element.descripcion}}</td>
+    </ng-container>
+    <ng-container matColumnDef ="Precio">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Precio</th>
+        <td mat-cell *matCellDef="let element" class="header-align-right">{{element.precio}}</td>
+    </ng-container> 
+    
+   
+
+    
+    
+    <ng-container matColumnDef ="Acciones">
+        <th mat-header-cell *matHeaderCellDef  class="header-align-right margencab" >Acciones</th>
+        <td mat-cell *matCellDef="let element" class="header-align-right ">
+            <button (click)="Edit(element)" mat-raised-button color="primary" class="margencab">Editar</button> 
+            <button (click)="delete(element)" mat-raised-button color="Basic" class="margencab">Eliminar</button>
+        </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="Columnas"></tr>
+    <tr mat-row *matRowDef="let row; columns Columnas"></tr>
+    
+    
+</table>
+<mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of DataProd"></mat-paginator>
+
+    
+
+    
+
+</div>
+

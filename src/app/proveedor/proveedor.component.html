@@ -1,0 +1,68 @@
+<!-- <div *ngFor="let element of dataSource">
+    {{element.Correo}}
+</div> -->
+
+    <div>
+        <mat-toolbar >
+            <span >Pharmacy Lion</span>
+            
+            <img src="./assets/img/2.png" class="tama">
+            
+        </mat-toolbar>        
+
+        <div>
+            <a mat-raised-button color="primary" (click)="openAdd()">Nuevo Proveedor</a>
+        </div>
+        
+        
+<mat-form-field appearance="standard">
+    <mat-label>Filter</mat-label>
+    
+        <input matInput  placeholder="Ex. Mia" #input (keyup)="applyFilter($event)">
+   
+    
+  </mat-form-field>
+        <table mat-table [dataSource]="lst"
+        class = "mat-elevation-z4" class="table">
+        <ng-container matColumnDef ="idProveedor" class="header-align-right" >
+            <th mat-header-cell *matHeaderCellDef  mat-sort-header  >#</th>
+            <td mat-cell *matCellDef="let element">{{element.idProveedor}}</td>
+        </ng-container>
+        <ng-container matColumnDef ="nombreCompleto" >
+            <th mat-header-cell *matHeaderCellDef  mat-sort-header class="header-align-right" >Nombre proveedor</th>
+            <td mat-cell *matCellDef="let element" class="header-align-right">{{element.nombreCompleto}}</td>
+        </ng-container>
+        <ng-container matColumnDef ="cedula">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header class="header-align-right"> Codigo Proveedor </th>
+            <td mat-cell *matCellDef="let element" class="header-align-right">{{element.cedula}}</td>
+        </ng-container>
+        <ng-container matColumnDef ="Direccion">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header class="header-align-right">Direccion</th>
+            <td mat-cell *matCellDef="let element" class="header-align-right">{{element.direccion}}</td>
+        </ng-container>
+        <ng-container matColumnDef ="Telefono">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header class="header-align-right">Telefono</th>
+            <td mat-cell *matCellDef="let element" class="header-align-right">{{element.telefono}}</td>
+        </ng-container> 
+        <ng-container matColumnDef ="Correo">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header class="header-align-right">correos</th>
+            <td mat-cell *matCellDef="let element" class="header-align-right">{{element.correo}}</td>
+        </ng-container>
+       
+
+        
+        
+        <ng-container matColumnDef ="Acciones">
+            <th mat-header-cell *matHeaderCellDef  class="header-align-right" >Acciones</th>
+            <td mat-cell *matCellDef="let element" class="header-align-right">
+                <button (click)="Edit(element)" mat-raised-button color="primary" >Editar</button> 
+                <button (click)="delete(element)" mat-raised-button color="Basic" >Eliminar</button>
+            </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="Columnas"></tr>
+        <tr mat-row *matRowDef="let row; columns Columnas"></tr>
+        
+        
+    </table>
+    </div>
+

@@ -1,0 +1,65 @@
+<h1 mat-dialog-title font>{{proveedor.nombre == '' ? 'NUEVO USUARIO' :prueba() }}</h1> 
+
+
+<!-- <h1 mat-dialog-title >{{pu==true ?  prueba() :'Nuevo Usuario' }}</h1> -->
+<mat-dialog-content  class="tma">
+    <!-- <h1>ID Proveedor:</h1> -->
+    <h1 style="color: chartreuse;">{{proveedor.idInsumo}}</h1>
+    
+    <!-- <mat-form-field>
+        <mat-label>
+            ID de proveedor
+        </mat-label>
+        <input matInput [(ngModel)]="idProveedor">
+    </mat-form-field> -->
+
+    <mat-form-field>
+        <mat-label>
+            Nombre
+        </mat-label>
+        <input matInput [(ngModel)]="Nombre">
+    </mat-form-field>
+    
+    <mat-form-field>
+        <mat-label>
+            Descripcion
+        </mat-label>
+        <input matInput [(ngModel)]="Descripcion">
+    </mat-form-field> 
+    <mat-form-field>
+        <mat-label>
+        Cantidad
+        </mat-label>
+        <input matInput [(ngModel)]="Cantidad">
+    </mat-form-field>
+    <!-- <mat-form-field>
+        <mat-label>
+            Id Proveedor
+        </mat-label>
+        <input matInput [(ngModel)]="IdProveedor">
+    </mat-form-field> -->
+
+    <mat-form-field appearance="fill">
+        <mat-label>Elige Proveedor</mat-label>
+        <mat-select  [(ngModel)]="selectedProve" name="selector">
+          <mat-option *ngFor="let food of prover" [value]="food.value">
+            {{food.viewValue}}
+          </mat-option>
+        </mat-select>
+        
+      </mat-form-field>
+      <!-- <p> Selected selector: {{selectedProve}} </p> -->
+      
+
+    
+            
+     
+    
+
+</mat-dialog-content>
+<div mat-dialog-actions>
+<button mat-raised-button (click)="close()"  >Cancelar</button>
+<!-- <button mat-raised-button color="primary"  (click)="proveedor.nombreCompleto=='' ? addProveedor():editProveedor()" >Guardar</button>  -->
+<button mat-raised-button color="primary"  (click)="proveedor.idInsumo==null ? addProveedor():editProveedor()" >Guardar</button> 
+<!-- <button mat-raised-button color="primary"  (click)="addProveedor()" >Guardar</button> --> 
+</div>

@@ -1,0 +1,40 @@
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 36px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    color: palevioletred;
+}
+.header-align-right {
+    text-align: center;
+    justify-content: flex-end;
+    margin: 90px;
+  }
+  .image{
+      height: 100%;
+      min-height: 100%;
+      size: 100%;
+      background-color: blueviolet;
+  }
+ .margen{
+     margin: 5px;
+ }
+  _table {
+    width: 100%;
+    table-layout: fixed;
+  }
+  
+  th, td {
+    overflow: hidden;
+    width: 200px;
+    text-overflow: Ellipsis;
+    white-space: nowrap;
+  }
+  

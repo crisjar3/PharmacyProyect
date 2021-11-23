@@ -1,0 +1,132 @@
+<!-- <h1 mat-dialog-title font>{{proveedor.nombre == '' ? 'NUEVO USUARIO' :prueba() }}</h1>  -->
+
+
+<!-- <h1 mat-dialog-title >{{pu==true ?  prueba() :'Nuevo Usuario' }}</h1> -->
+<mat-dialog-content  class="tamas">
+    <!-- <h1>ID Proveedor:</h1> -->
+    <!-- <h1 style="color: chartreuse;">{{linea.idInsumo}}</h1> -->
+
+    <!-- <mat-form-field class="margen">
+        <mat-label>
+        Total    
+        </mat-label>
+        <input matInput [(ngModel)]="Total">
+    </mat-form-field> -->
+    
+    <mat-form-field  class="margen">
+        <mat-label>
+            Descuento Total
+        </mat-label>
+        <input matInput [(ngModel)]="Descuento">
+    </mat-form-field> 
+
+    <h1 class="margen">{{fechacadena}}</h1>
+
+    <!-- <mat-form-field  class="margen">
+      <mat-label>
+          Fecha
+      </mat-label>
+      <input matInput [(ngModel)]="Descuento">
+  </mat-form-field> -->
+
+  <mat-form-field appearance="fill"  class="margen">
+    <mat-label>Elige Estado Venta</mat-label>
+    <mat-select  [(ngModel)]="SelectedEstado" name="selector">
+      <mat-option *ngFor="let food of EstadoComboBox " [value]="food.value">
+        {{food.viewValue}}
+      </mat-option>
+    </mat-select>  
+  </mat-form-field>
+<!-- Combobox para empleado -->
+    <mat-form-field appearance="fill"  class="margen">
+        <mat-label>Elige Empleado</mat-label>
+        <mat-select  [(ngModel)]="SelectedEmpleado" name="selector">
+          <mat-option *ngFor="let food of EmpleadoComboBox " [value]="food.value">
+            {{food.viewValue}}
+          </mat-option>
+        </mat-select>  
+      </mat-form-field>
+
+     <!-- ComboBox para los Productos -->
+    <mat-form-field appearance="fill"  class="margen">
+        <mat-label>Elige el Producto</mat-label>
+        <mat-select  [(ngModel)]="SelectedProducto" name="selector">
+          <mat-option *ngFor="let food of ProductoComboBox" [value]="food.value">
+            {{food.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <!-- ComboBox para Distribuidora -->
+      <mat-form-field appearance="fill"  class="margen">
+        <mat-label>Elige Distribuidora</mat-label>
+        <mat-select  [(ngModel)]="SelectedDistribuidora" name="selector">
+          <mat-option *ngFor="let food of DistribuidoraComboBox" [value]="food.value">
+            {{food.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <!-- fin comboBox -->
+<!-- Campos para EL detalle de Venta -->
+    <mat-form-field  class="margen">
+        <mat-label>
+            Cantidad
+        </mat-label>
+        <input matInput [(ngModel)]="Cantidad">
+    </mat-form-field>
+
+
+
+    <button mat-raised-button  (click)="AddDetails()" class="material-icons margen ">add</button>
+    <!-- Aca inicia la tabla detalles -->
+    <table mat-table [dataSource]="DataSourceDetalleVenta"
+    class = "mat-elevation-z4" class="table">
+    <ng-container matColumnDef ="IdProducto" class="header-align-right">
+        <th mat-header-cell *matHeaderCellDef  mat-sort-header class="header-align-right" >ID Producto</th>
+        <td mat-cell *matCellDef="let element" class="header-align-right">{{element.idProducto}}</td>
+    </ng-container>
+    <ng-container matColumnDef ="Cantidad">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="header-align-right"> Cantidad </th>
+        <td mat-cell *matCellDef="let element" class="header-align-right">{{element.cantidad}}</td>
+    </ng-container>
+  <ng-container matColumnDef ="PrecioUnitario">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header class="header-align-right"> Precio Unitario</th>
+    <td mat-cell *matCellDef="let element" class="header-align-right">{{element.precioUnitario}}</td>
+</ng-container>
+
+<ng-container matColumnDef ="Total">
+  <th mat-header-cell *matHeaderCellDef mat-sort-header class="header-align-right"> Subtotal</th>
+  <td mat-cell *matCellDef="let element" class="header-align-right">{{element.total}}</td>
+</ng-container>
+    
+    
+    <ng-container matColumnDef ="Acciones">
+        <th mat-header-cell *matHeaderCellDef  class="header-align-right" >Acciones</th>
+        <td mat-cell *matCellDef="let element" class="header-align-right">
+            <button  mat-raised-button color="primary" (click)="EraseDetails(element.idProducto)" *ngIf="element.idProducto!=''">Editar</button>
+            
+            <!-- <button (click)="Edit(element)" mat-raised-button color="primary" >Editar</button>  -->
+            <!-- <button (click)="delete(element)" mat-raised-button color="Basic" >Eliminar</button> -->
+        </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="ColumnasDetalle"></tr>
+    <tr mat-row *matRowDef="let row; columns ColumnasDetalle"></tr>
+
+
+    </table>
+
+    <!-- ACa estan las acciones generales  -->
+            
+     
+    
+
+</mat-dialog-content>
+<div mat-dialog-actions>
+  <h1 class="margen">Total</h1>
+  <h1 class="margen">{{Total}}</h1>
+<button mat-raised-button (click)="close()"  >Cancelar</button>
+<button  mat-raised-button color="primary" (click)="AddCompra()" >Comprar</button>
+
+<!-- <button mat-raised-button color="primary"  (click)="proveedor.nombreCompleto=='' ? addProveedor():editProveedor()" >Guardar</button>  -->
+<!-- <button mat-raised-button color="primary"  (click)="proveedor.idInsumo==null ? addProveedor():editProveedor()" >Guardar</button>  -->
+<!-- <button mat-raised-button color="primary"  (click)="addProveedor()" >Guardar</button> --> 
+</div>

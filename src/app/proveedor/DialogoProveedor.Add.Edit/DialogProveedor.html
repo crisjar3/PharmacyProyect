@@ -1,0 +1,50 @@
+<h1 mat-dialog-title font>{{proveedor.nombreCompleto == null ? 'NUEVO USUARIO' :prueba() }}</h1> 
+
+
+<!-- <h1 mat-dialog-title >{{pu==true ?  prueba() :'Nuevo Usuario' }}</h1> -->
+<div mat-dialog-content>
+    <!-- <h1>ID Proveedor:</h1> -->
+    <h1 style="color: chartreuse;">{{proveedor.idProveedor}}</h1>
+    
+
+    <mat-form-field>
+        <mat-label>
+            Nombre
+        </mat-label>
+        <input matInput [(ngModel)]="nombre">
+    </mat-form-field>
+    
+    <mat-form-field>
+        <mat-label>
+            Codigo proveedor
+        </mat-label>
+        <input matInput [(ngModel)]="cedula">
+    </mat-form-field> 
+    <mat-form-field>
+        <mat-label>
+        Direccion proveedor
+        </mat-label>
+        <input matInput [(ngModel)]="direccion">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>
+            Telefono
+        </mat-label>
+        <input matInput [(ngModel)]="Numero">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>
+            Correo Empresarial
+        </mat-label>
+        <input matInput [(ngModel)]="Correo">
+    </mat-form-field>
+        
+     
+    
+
+</div>
+<div mat-dialog-actions>
+<button mat-raised-button (click)="close()"  >Cancelar</button>
+<!-- <button mat-raised-button color="primary"  (click)="proveedor.nombreCompleto=='' ? addProveedor():editProveedor()" >Guardar</button>  -->
+<button mat-raised-button color="primary"  (click)="pu==false ? addProveedor():editProveedor()" >Guardar</button> 
+</div>

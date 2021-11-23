@@ -1,0 +1,23 @@
+.header-align-right {
+    
+    margin-left: 90px;
+    margin-block-end: 20px;
+  }
+
+  _table {
+    width: 100%;
+    table-layout: fixed;
+  }
+  
+  th, td {
+    overflow: hidden;
+    width: 200px;
+    text-overflow: Ellipsis;
+    white-space: nowrap;
+  }
+  .margen{
+    margin: 5px;
+}
+.margenPicker{
+  margin: 10px;
+}

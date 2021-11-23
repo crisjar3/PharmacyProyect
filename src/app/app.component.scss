@@ -1,0 +1,46 @@
+.side{
+   background-color: black;
+   
+   width: 90px;
+   height: max;
+  //  position:absolute; 
+  //  z-index:1;
+   
+  }
+  mat-sidenav-container{
+   height: 100%;
+ }
+
+ mat-sidenav,mat-sidenav-content{
+   padding: 16px;
+ } 
+
+ mat-sidenav{
+   background-color:gray;
+   width: 200px;
+ }
+ .material-icons {
+   font-family: 'Material Icons';
+   font-weight: normal;
+   font-style: normal;
+   font-size: 36px;  /* Preferred icon size */
+   display: inline-block;
+   line-height: 1;
+   text-transform: none;
+   letter-spacing: normal;
+   word-wrap: normal;
+   white-space: nowrap;
+   direction: ltr;
+   color: palevioletred;
+ 
+   /* Support for all WebKit browsers. */
+   -webkit-font-smoothing: antialiased;
+   /* Support for Safari and Chrome. */
+   text-rendering: optimizeLegibility;
+ 
+   /* Support for Firefox. */
+   -moz-osx-font-smoothing: grayscale;
+ 
+   /* Support for IE. */
+   font-feature-settings: 'liga';
+ }

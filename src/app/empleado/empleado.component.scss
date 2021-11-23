@@ -1,0 +1,32 @@
+.header-align-right {
+    text-align: center;
+    justify-content: flex-end;
+  }
+  .image{
+      height: 100%;
+      min-height: 100%;
+      size: 100%;
+      background-color: blueviolet;
+  }
+  table {
+    width: 1000px;
+    
+
+  }
+  .sidenav-container{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+  
+.tama{
+  margin: auto;
+  height: 25px;
+  width: 30px;
+  background-color: white;
+}
+.posci{
+  float: center;
+}
